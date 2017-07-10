@@ -15,6 +15,9 @@
  */
 package com.base2.kagura.rest.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.List;
 import java.util.Map;
 
@@ -22,9 +25,11 @@ import java.util.Map;
  * @author aubels
  *         Date: 16/12/2013
  */
+@ApiModel
 public class ReportDetailsAndResults extends ReportDetails {
 
-    private List<Map<String, Object>> rows;
+	@ApiModelProperty
+	private List<Map<String, Object>> rows;
 
     public void setRows(List<Map<String, Object>> rows) {
         this.rows = rows;

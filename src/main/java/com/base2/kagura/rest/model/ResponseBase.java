@@ -15,6 +15,8 @@
  */
 package com.base2.kagura.rest.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 
@@ -26,10 +28,15 @@ import java.util.Map;
  * @author aubels
  *         Date: 13/12/2013
  */
+@ApiModel
 public class ResponseBase {
+	@ApiModelProperty
     String error;
+	@ApiModelProperty
     String reportId;
+	@ApiModelProperty
     List<String> errors;
+	@ApiModelProperty
     Map<String, String> extra;
 
     public ResponseBase() {

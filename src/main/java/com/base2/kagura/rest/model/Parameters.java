@@ -20,13 +20,17 @@ import java.util.Map;
 import java.io.IOException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author aubels
  *         Date: 4/09/13
  */
+@ApiModel
 public class Parameters {
-    Map<String, Object> parameters;
+	@ApiModelProperty
+	Map<String, Object> parameters;
 
     public Parameters(String json) {
         ObjectMapper mapper = new ObjectMapper();

@@ -170,6 +170,11 @@
             <artifactId>kagura-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.15</version>
+        </dependency>
     </dependencies>
 
     <profiles>

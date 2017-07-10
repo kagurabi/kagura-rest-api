@@ -15,14 +15,19 @@
  */
 package com.base2.kagura.rest.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.List;
 
 /**
  * @author aubels
  *         Date: 13/12/2013
  */
+@ApiModel
 public class AuthenticationResult extends ResponseBase {
-    String token;
+	@ApiModelProperty
+	String token;
 
     public String getToken() {
         return token;

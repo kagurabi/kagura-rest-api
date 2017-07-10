@@ -17,6 +17,8 @@ package com.base2.kagura.rest.model;
 
 import com.base2.kagura.core.report.configmodel.parts.ColumnDef;
 import com.base2.kagura.core.report.parameterTypes.ParamConfig;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -26,9 +28,12 @@ import java.util.Map;
  * @author aubels
  *         Date: 13/12/2013
  */
+@ApiModel
 public class ReportDetails extends ResponseBase {
-    private List<ParamConfig> params;
-    private List<ColumnDef> columns;
+	@ApiModelProperty
+	private List<ParamConfig> params;
+	@ApiModelProperty
+	private List<ColumnDef> columns;
 
     public ReportDetails() {
     }
