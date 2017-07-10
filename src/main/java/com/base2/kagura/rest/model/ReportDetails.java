@@ -30,7 +30,7 @@ import java.util.Map;
  */
 @ApiModel
 public class ReportDetails extends ResponseBase {
-	@ApiModelProperty
+	@ApiModelProperty(value = "Report parameters.")
 	private List<ParamConfig> params;
 	@ApiModelProperty
 	private List<ColumnDef> columns;
@@ -46,7 +46,8 @@ public class ReportDetails extends ResponseBase {
         this.params = params;
     }
 
-    public List<ParamConfig> getParams() {
+	@ApiModelProperty(value = "Report parameters.")
+	public List<ParamConfig> getParams() {
         return params;
     }
 
