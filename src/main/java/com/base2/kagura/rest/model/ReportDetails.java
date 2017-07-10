@@ -28,7 +28,7 @@ import java.util.Map;
  * @author aubels
  *         Date: 13/12/2013
  */
-@ApiModel
+@ApiModel(description = "Report Details including Column and Paramter information")
 public class ReportDetails extends ResponseBase {
 	@ApiModelProperty(value = "Report parameters.")
 	private List<ParamConfig> params;
@@ -46,7 +46,6 @@ public class ReportDetails extends ResponseBase {
         this.params = params;
     }
 
-	@ApiModelProperty(value = "Report parameters.")
 	public List<ParamConfig> getParams() {
         return params;
     }
