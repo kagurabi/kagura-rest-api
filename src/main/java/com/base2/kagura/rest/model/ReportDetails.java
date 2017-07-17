@@ -28,11 +28,9 @@ import java.util.Map;
  * @author aubels
  *         Date: 13/12/2013
  */
-@ApiModel(description = "Report Details including Column and Paramter information")
+@ApiModel(description = "Report Details including Column and parameter information", parent = ResponseBase.class)
 public class ReportDetails extends ResponseBase {
-	@ApiModelProperty(value = "Report parameters.")
 	private List<ParamConfig> params;
-	@ApiModelProperty
 	private List<ColumnDef> columns;
 
     public ReportDetails() {
@@ -46,6 +44,7 @@ public class ReportDetails extends ResponseBase {
         this.params = params;
     }
 
+	@ApiModelProperty(value = "Report parameters available to the report. You should not rely on this for the values used to query, those should be stored in the front end between queries.")
 	public List<ParamConfig> getParams() {
         return params;
     }
@@ -54,6 +53,7 @@ public class ReportDetails extends ResponseBase {
         this.columns = columns;
     }
 
+	@ApiModelProperty(value = "The columns the report has to show.")
     public List<ColumnDef> getColumns() {
         return columns;
     }

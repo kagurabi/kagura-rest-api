@@ -28,15 +28,11 @@ import java.util.Map;
  * @author aubels
  *         Date: 13/12/2013
  */
-@ApiModel
+@ApiModel(description = "Base object for responses. Contains all the common fields", parent = ResponseBase.class)
 public class ResponseBase {
-	@ApiModelProperty
     String error;
-	@ApiModelProperty
     String reportId;
-	@ApiModelProperty
     List<String> errors;
-	@ApiModelProperty
     Map<String, String> extra;
 
     public ResponseBase() {
@@ -46,7 +42,8 @@ public class ResponseBase {
         BeanUtils.populate(this, result);
     }
 
-    public String getError() {
+	@ApiModelProperty(value = "Gets the formost error, other errors are important.. Should be caught and passed to the user with UI specific string/object")
+	public String getError() {
         return error;
     }
 
@@ -54,7 +51,8 @@ public class ResponseBase {
         this.error = error;
     }
 
-    public String getReportId() {
+	@ApiModelProperty(value = "The report ID used to reference the report. Used primarily in the URL.")
+	public String getReportId() {
         return reportId;
     }
 
@@ -62,7 +60,8 @@ public class ResponseBase {
         this.reportId = reportId;
     }
 
-    public List<String> getErrors() {
+	@ApiModelProperty(value = "Gets a list of errors (unlike \"error\"), these should not be passed on to the user directly but filtered.")
+	public List<String> getErrors() {
         return errors;
     }
 
@@ -70,7 +69,8 @@ public class ResponseBase {
         this.errors = errors;
     }
 
-    public Map<String, String> getExtra() {
+	@ApiModelProperty(value = "Any extras set in the report configuraiton itself. These tend to be static, but used by the front end to render correctly (such as options, or view mode, report listing details, ie Report Name is often put here..")
+	public Map<String, String> getExtra() {
         return extra;
     }
 

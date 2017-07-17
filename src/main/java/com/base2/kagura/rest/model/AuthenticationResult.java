@@ -24,11 +24,11 @@ import java.util.List;
  * @author aubels
  *         Date: 13/12/2013
  */
-@ApiModel
+@ApiModel(description = "Authentication result with token, if successful otherwise another response" , parent = ResponseBase.class)
 public class AuthenticationResult extends ResponseBase {
-	@ApiModelProperty
 	String token;
 
+	@ApiModelProperty(value = "The user token")
     public String getToken() {
         return token;
     }

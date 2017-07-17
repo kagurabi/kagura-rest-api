@@ -25,16 +25,16 @@ import java.util.Map;
  * @author aubels
  *         Date: 16/12/2013
  */
-@ApiModel
+@ApiModel(description = "Returns the report details in full (unless unselected) with the report rows.", parent = ReportDetails.class)
 public class ReportDetailsAndResults extends ReportDetails {
 
-	@ApiModelProperty
 	private List<Map<String, Object>> rows;
 
     public void setRows(List<Map<String, Object>> rows) {
         this.rows = rows;
     }
 
+	@ApiModelProperty(value = "Data that has been returned from running the report.")
     public List<Map<String, Object>> getRows() {
         return rows;
     }

@@ -27,9 +27,8 @@ import io.swagger.annotations.ApiModelProperty;
  * @author aubels
  *         Date: 4/09/13
  */
-@ApiModel
+@ApiModel(description = "Override for parameters, allows you to pass in a json object as a string to be decoded. Shouldn't be accessible as used as input.")
 public class Parameters {
-	@ApiModelProperty
 	Map<String, Object> parameters;
 
     public Parameters(String json) {
@@ -44,6 +43,7 @@ public class Parameters {
         }
     }
 
+	@ApiModelProperty(value = "Parameters resulting from decoding")
     public Map<String, Object> getParameters() {
         return parameters;
     }
